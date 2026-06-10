@@ -160,6 +160,7 @@
     .three-col,
     .agenda,
     .flow,
+    .solution-map,
     .proof-grid,
     .closer {
       display: grid;
@@ -320,6 +321,46 @@
       gap: 12px;
     }
 
+    .solution-map {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .solution-card {
+      min-height: 214px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgb(32 36 37 / 92%);
+      display: grid;
+      grid-template-rows: min-content min-content 1fr;
+      gap: 8px;
+    }
+
+    .solution-card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.14;
+    }
+
+    .solution-card p {
+      font-size: 15.5px;
+      line-height: 1.26;
+    }
+
+    .connector {
+      margin: 14px 0 0;
+      padding: 12px 14px;
+      border: 1px dashed #77715f;
+      border-radius: 8px;
+      background: rgb(214 168 79 / 10%);
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 720;
+      text-align: center;
+    }
+
     .flow .tile {
       min-height: 190px;
       display: grid;
@@ -470,6 +511,7 @@
       .three-col,
       .agenda,
       .flow,
+      .solution-map,
       .proof-grid,
       .impact,
       .closer,
@@ -614,24 +656,41 @@
     <section class="slide">
       <header>
         <p class="kicker">Cómo se soluciona</p>
-        <h2>La confianza se arma como flujo: emitir, guardar, presentar y verificar.</h2>
+        <h2>La solución ordena cada credencial universitaria desde su uso real.</h2>
       </header>
       <div>
-        <div class="flow">
-          <div class="tile"><span class="tag">1</span><h3>Emisión</h3><p>La Facultad firma la credencial y registra su huella verificable.</p></div>
-          <div class="tile"><span class="tag green">2</span><h3>Wallet</h3><p>El titular recibe la credencial y la porta sin depender de una copia en papel.</p></div>
-          <div class="tile"><span class="tag cyan">3</span><h3>QR público</h3><p>Un verificador escanea o pega el JSON para comprobar autenticidad.</p></div>
-          <div class="tile"><span class="tag red">4</span><h3>Revocación</h3><p>Si cambia el estado, la credencial puede quedar invalidada de forma trazable.</p></div>
+        <div class="solution-map">
+          <div class="solution-card">
+            <span class="tag">Documentos</span>
+            <h3>Constancias y certificados</h3>
+            <p>Dejan de ser PDF aislados: cada documento se emite desde Facultad y se presenta con QR verificable.</p>
+          </div>
+          <div class="solution-card">
+            <span class="tag green">Títulos</span>
+            <h3>Validación externa</h3>
+            <p>Un empleador u otra institución puede comprobar autenticidad sin llamar ni pedir confirmación manual.</p>
+          </div>
+          <div class="solution-card">
+            <span class="tag cyan">Libreta</span>
+            <h3>Regularidad y nota final</h3>
+            <p>El profesor carga solo dentro de permisos otorgados y el alumno ve materias regulares o aprobadas.</p>
+          </div>
+          <div class="solution-card">
+            <span class="tag red">Accesos</span>
+            <h3>Biblioteca y laboratorio</h3>
+            <p>Se valida carnet o rol antes de registrar retiros, devoluciones, ingresos o egresos.</p>
+          </div>
+          <div class="solution-card">
+            <span class="tag">Auditoría</span>
+            <h3>Quién, cuándo y con qué rol</h3>
+            <p>La institución conserva trazabilidad de emisiones, permisos, verificaciones y revocaciones.</p>
+          </div>
         </div>
-        <div class="chips">
-          <span class="chip">Backend Go</span>
-          <span class="chip">React / PWA</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Solidity / EVM</span>
-          <span class="chip">BFA como red objetivo</span>
+        <div class="connector">
+          Flujo común: Facultad o docente autorizado emite → el titular lo porta en su wallet → cualquier verificador escanea → el sistema confirma firma, rol, vigencia y revocación.
         </div>
       </div>
-      <footer class="footer"><span>Arquitectura resumida</span><span>5 / 6</span></footer>
+      <footer class="footer"><span>Solución aplicada a casos reales</span><span>5 / 6</span></footer>
     </section>
 
     <section class="slide">
